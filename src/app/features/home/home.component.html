@@ -1,0 +1,119 @@
+<!-- Hero Section -->
+<header id="hero" class="scroll-section">
+  <div class="container">
+    <div class="hero-content">
+      <!-- Dynamic Clock Logo -->
+      <div id="clock-logo" class="logo">
+        <img src="bg.png" alt="Clock Face" id="clock-face">
+
+        <!-- Shadow Layer -->
+        <div id="shadow-layer">
+          <img src="spoon.png" alt="" id="hour-shadow" class="shadow-hand clock-hand">
+          <img src="fork.png" alt="" id="minute-shadow" class="shadow-hand clock-hand">
+        </div>
+
+        <!-- Real Hands -->
+        <img src="spoon.png" alt="Hour Hand" id="hour-hand" class="clock-hand">
+        <img src="fork.png" alt="Minute Hand" id="minute-hand" class="clock-hand">
+        <!-- Second Hand (No Shadow) -->
+        <img src="second.png" alt="Second Hand" id="second-hand" class="clock-hand">
+      </div>
+
+      <div class="text-logo animate-on-scroll fade-in">Fitkhao</div>
+
+      <p class="animate-on-scroll fade-in-up delay-1">fitKhao is a mobile application for nutritious food where the user can set their physique goals and can order food based on their recommended diet plan. Enjoy three healthy and tasty meals a day, according to your plan to gain lean-mass or to lose weight.</p>
+
+      <form id="preregister-form" class="animate-on-scroll fade-in-up delay-2" (submit)="onSubmit($event)">
+        <label for="pincode" class="sr-only">PIN Code</label>
+        <input type="tel" id="pincode" name="pincode" [(ngModel)]="formData.pincode" (input)="onPincodeInput($event)" placeholder="Enter your PIN Code" required>
+        <label for="mobile" class="sr-only">Mobile Number</label>
+        <div class="mobile-input-group">
+          <span class="country-code">+91</span>
+          <input type="tel" id="mobile" name="mobile" [(ngModel)]="formData.mobile" (input)="onMobileInput($event)" placeholder="Enter your mobile number" required>
+        </div>
+        <button type="submit">Pre-register for Fitkhao</button>
+      </form>
+      <div id="form-message" [innerHTML]="formMessage"></div>
+      <h1 class="animate-on-scroll fade-in-up">Your Body Goals, Our Expert Mission</h1>
+      <p class="availability animate-on-scroll fade-in-up delay-3">Launching soon on Android & iOS!</p>
+    </div>
+    <div class="hero-image animate-on-scroll fade-in-right">
+      <img src="Register.png" alt="Work in progress UI of Fitkhao">
+    </div>
+  </div>
+</header>
+
+<!-- Features Section -->
+<section id="features" class="scroll-section">
+  <div class="container">
+    <h2 class="animate-on-scroll fade-in">Where Science Meets Your Plate</h2>
+    <div class="features-grid">
+      <div class="feature-item animate-on-scroll fade-in-up">
+        <i class="fas fa-calculator"></i>
+        <h3>YOUR BODY, OUR BLUEPRINT</h3>
+        <p>Certified nutritionists assess your BMI and age-based calorie-needs to design a personalized nutrition plan. Our blueprint is scientifically tailored to fit your body type and meet your health goals.</p>
+      </div>
+      <div class="feature-item animate-on-scroll fade-in-up delay-1">
+        <i class="fas fa-utensils"></i>
+        <h3>SCIENCE IN EVERY BITE</h3>
+        <p>Our expert nutritionists design every dish with precision—calories, protein, carbs, and fats clearly shown. Eat smarter, track easily, and stay perfectly aligned with your goals.</p>
+      </div>
+      <div class="feature-item animate-on-scroll fade-in-up delay-2">
+        <i class="fas fa-tachometer-alt"></i>
+        <h3>MACRO MATTERS MOST</h3>
+        <p>See exactly what's on your plate with full nutrition breakdowns. Know every bite, hit every goal.</p>
+      </div>
+      <div class="feature-item animate-on-scroll fade-in-up delay-3">
+        <i class="fas fa-truck"></i>
+        <h3>DIET AT YOUR DOORSTEP</h3>
+        <p>Get healthy, ready to eat meals delivered to your doorstep at your preferred time. No cooking, no stress just fresh nutrition ready to be served.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section id="how-it-works" class="scroll-section">
+  <div class="container">
+    <h2 class="animate-on-scroll fade-in">Transform your health, transform your future</h2>
+    <div class="steps-container">
+      <div class="step-item animate-on-scroll fade-in-left">
+        <i class="fas fa-clipboard-list"></i>
+        <h3>YOUR VISION, OUR PASSION</h3>
+        <p>Just share your health goals, age, lifestyle and relax. Our experts will calculate your BMI and set the perfect calorie target for your transformation.</p>
+      </div>
+      <div class="step-item animate-on-scroll fade-in-up delay-1">
+        <i class="fas fa-shopping-basket"></i>
+        <h3>NO GUESS, ONLY PROGRESS</h3>
+        <p>Explore our nutritionist-designed menu with full macros to help you stay on track with your calorie goals. Know every dish, know every detail.</p>
+      </div>
+      <div class="step-item animate-on-scroll fade-in-right delay-2">
+        <i class="fas fa-shipping-fast"></i>
+        <h3>MEASURE. MONITOR. MASTER.</h3>
+        <p>With our detailed and personalized menu, tracking your progress against your target calories becomes a piece of cake.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section id="cta" class="scroll-section">
+  <div class="container">
+    <h2 class="animate-on-scroll fade-in">Ready to Redefine Your Relationship with Food?</h2>
+    <p class="animate-on-scroll fade-in delay-1">Stop dreaming about your ideal body - start building it! Pre-register now and be among the first to experience the future of personalized nutrition.</p>
+    <a href="#hero" class="cta-button animate-on-scroll fade-in-up delay-2">Pre-register for Fitkhao</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61582306971518" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/fitkhao/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/fitkhao?igsh=d2xyOG1wdm9waDg5" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>© {{ currentYear }} Fitkhao. All rights reserved.</p>
+    <p><a routerLink="/privacy">Privacy Policy</a> | <a routerLink="/terms">Terms of Service</a></p>
+  </div>
+</footer>

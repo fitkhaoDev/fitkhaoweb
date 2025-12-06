@@ -6,8 +6,11 @@ This guide covers deployment to **both** GitHub Pages and GoDaddy hosting for ww
 
 The project is now properly structured with:
 - Source code in `/src`
-- Built files in `/docs/browser` (committed to git for GitHub Pages)
+- Built files in `/docs` root (for GitHub Pages)
+- Built files also in `/docs/browser` (for GoDaddy)
 - CNAME and .htaccess automatically included in builds
+- Use `npm run build:github` for GitHub Pages (copies files to docs root)
+- Use `npm run build` for GoDaddy (uses docs/browser)
 
 ---
 
@@ -77,8 +80,8 @@ cd "c:\Users\Subho Chakraborty\Desktop\fitkhaoweb\fitkhaoweb"
 
 # 1. Make your code changes in /src
 
-# 2. Build the application
-npm run build
+# 2. Build the application for GitHub Pages
+npm run build:github
 
 # 3. Commit and push
 git add .
@@ -158,15 +161,19 @@ fitkhaoweb/
 ├── src/                    # Source code (Angular app)
 ├── public/                 # Static assets (images, etc.)
 ├── docs/                   # Built files (GitHub Pages serves from here)
-│   └── browser/
+│   ├── index.html          ✓ (GitHub Pages uses this)
+│   ├── .htaccess           ✓
+│   ├── CNAME               ✓
+│   ├── *.js files          ✓
+│   ├── *.css files         ✓
+│   ├── images/             ✓
+│   └── browser/            # GoDaddy uses this subfolder
 │       ├── index.html      ✓
 │       ├── .htaccess       ✓
 │       ├── CNAME           ✓
-│       ├── *.js files      ✓
-│       ├── *.css files     ✓
-│       └── images/         ✓
+│       └── all files...    ✓
 ├── angular.json            # Build configuration
-├── package.json
+├── package.json            # Contains build:github script
 ├── CNAME                   # Domain configuration (copied to docs)
 ├── .htaccess              # Apache config (copied to docs)
 └── README.md
@@ -174,13 +181,15 @@ fitkhaoweb/
 
 ### What Gets Deployed
 
-The `/docs/browser` folder contains everything needed:
+**For GitHub Pages** - The `/docs` root folder contains:
 - ✓ index.html (main page)
 - ✓ .htaccess (routing for Angular)
 - ✓ CNAME (domain: www.fitkhao.com)
 - ✓ JavaScript bundles (chunk-*.js, main-*.js)
 - ✓ CSS files (styles-*.css)
 - ✓ Images (all .png and .ico files)
+
+**For GoDaddy** - The `/docs/browser` folder contains the same files
 
 ---
 
@@ -247,18 +256,27 @@ The `/docs/browser` folder contains everything needed:
 
 ## Quick Reference
 
-### Build Command
+### Build Commands
 ```bash
+# For GitHub Pages deployment
+npm run build:github
+
+# For GoDaddy deployment (regular build)
 npm run build
 ```
 
-### Build Output Location
+### Build Output Locations
 ```
-C:\Users\Subho Chakraborty\Desktop\fitkhaoweb\fitkhaoweb\docs\browser
+# GitHub Pages (files in docs root)
+C:\Users\Subho Chakraborty\Desktop\fitkhaoweb\fitkhaoweb\docs\
+
+# GoDaddy (files in docs/browser)
+C:\Users\Subho Chakraborty\Desktop\fitkhaoweb\fitkhaoweb\docs\browser\
 ```
 
 ### Deploy to GitHub Pages
 ```bash
+npm run build:github
 git add .
 git commit -m "Deploy update"
 git push origin main
